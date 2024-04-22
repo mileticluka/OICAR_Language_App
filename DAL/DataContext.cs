@@ -6,17 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.DataContext
+namespace DAL
 {
     public class DataContext : DbContext
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            string connectionString = "Data Source=DESKTOP-T46DD4R\\SQLEXPRESS;Initial Catalog=Oicar;User ID=sa;Password=SQL;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
-            optionsBuilder.UseSqlServer(connectionString, b => b.MigrationsAssembly("API"));
-        }
 
         public DbSet<User> User { get; set; }
         public DbSet<Language> Language { get; set; }

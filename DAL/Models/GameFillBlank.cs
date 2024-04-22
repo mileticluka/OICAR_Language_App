@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public class GameFillBlank
+    public class GameFillBlank : Game
     {
-        public int Id { get; set; }
         [ForeignKey(nameof(Language))]
         public int LanguageId { get; set; }
         public Language Language { get; set; }

@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public class GameFlashCard
+    public class GameFlashCard : Game
     {
-        public int Id { get; set; }
         [ForeignKey(nameof(Language))]
         public int LanguageId { get; set; }
         public Language Language { get; set; }
