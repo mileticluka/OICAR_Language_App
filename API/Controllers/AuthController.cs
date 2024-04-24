@@ -75,7 +75,7 @@ namespace API.Controllers
                 return StatusCode(StatusCodes.Status400BadRequest, ModelState);
             }
 
-            if (userRepository.CanCreate(model))
+            if (!userRepository.CanCreate(model))
             {
                 ModelState.AddModelError("", "Username or Email is already in use.");
                 return StatusCode(StatusCodes.Status400BadRequest, ModelState);
