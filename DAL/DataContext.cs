@@ -1,8 +1,10 @@
 ﻿using DAL.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Authentication;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,14 +12,20 @@ namespace DAL
 {
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions<DataContext> options) : base(options) { }
+        private readonly IConfiguration configuration;
+
+        public DataContext(IConfiguration configuration, DbContextOptions<DataContext> options) : base(options) {
+            this.configuration = configuration;
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = "Data Source=DESKTOP-VDDBMP2\\SQLEXPRESS;Initial Catalog=LanguageAppDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
-            optionsBuilder.UseSqlServer(connectionString, b => b.MigrationsAssembly("API"));
-        }
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
+            optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), b => b.MigrationsAssembly("API"));
 
+            //optionsBuilder.UseSqlServer(connectionString, b => b.MigrationsAssembly("API"));
+        }
+       
         public DbSet<User> User { get; set; }
         public DbSet<Language> Language { get; set; }
         public DbSet<GameObject> GameObject { get; set; }

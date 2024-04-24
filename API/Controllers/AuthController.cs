@@ -27,6 +27,12 @@ namespace API.Controllers
             this.configuration = configuration;
         }
 
+        [HttpGet]
+        public string HelloWorld()
+        {
+            return "Hello world";
+        }
+
         [HttpPost]
         [Route("login")]
         public IActionResult Login([FromBody] LoginDTO model)
