@@ -17,7 +17,10 @@ namespace DAL.Models
 
         [EmailAddress(ErrorMessage = "Invalid email addres")]
         public string Email { get; set; }
+
         public string PasswordHash { get; set; }
+        public string PasswordSalt { get; set; }
+
 
         [MaxLength(512)]
         public string Bio { get; set; }

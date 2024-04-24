@@ -10,10 +10,7 @@ namespace DAL.Interfaces
 {
     public interface IGameRepository
     {
-        public IList<T> GetGames<T>();
-        public T GetRandomGame<T>();
-
-
-        public Game GetGame(Type type, int id);
+        public IList<T> GetGames<T>(Language language);
+        public T GetRandomGame<T>(Language language);
     }
 }

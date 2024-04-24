@@ -72,6 +72,35 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Cryptography.Internal/2.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Cryptography.KeyDerivation/2.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Cryptography.Internal": "2.1.1"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "compile": {
@@ -1184,6 +1213,34 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "Microsoft.AspNetCore.Cryptography.Internal/2.1.1": {
+      "sha512": "guY3jMNkcUi2hrMJ4/vPnUUFwudxTVSJ809gCfpq+xR0UgV6P9ZHZLOI5q/07QHDZY+kKPXxipXGyJXQpq2k0g==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.cryptography.internal/2.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.xml",
+        "microsoft.aspnetcore.cryptography.internal.2.1.1.nupkg.sha512",
+        "microsoft.aspnetcore.cryptography.internal.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Cryptography.KeyDerivation/2.1.1": {
+      "sha512": "Dgr1YF3+UK8i60n/Ae3gml4WgUxd2YcJEMADToRReOO4Nl4++mz8HjZtxsb3WWeGRtGPkrIgNhJD5MO0bjFkTg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.cryptography.keyderivation/2.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll",
+        "lib/netcoreapp2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.xml",
+        "microsoft.aspnetcore.cryptography.keyderivation.2.1.1.nupkg.sha512",
+        "microsoft.aspnetcore.cryptography.keyderivation.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -3007,6 +3064,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "BCrypt.Net-Next >= 4.0.3",
+      "Microsoft.AspNetCore.Cryptography.KeyDerivation >= 2.1.1",
       "Microsoft.EntityFrameworkCore >= 7.0.18",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.18",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.18",
@@ -3060,6 +3118,10 @@
           "BCrypt.Net-Next": {
             "target": "Package",
             "version": "[4.0.3, )"
+          },
+          "Microsoft.AspNetCore.Cryptography.KeyDerivation": {
+            "target": "Package",
+            "version": "[2.1.1, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",

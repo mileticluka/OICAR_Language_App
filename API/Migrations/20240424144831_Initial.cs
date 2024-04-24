@@ -5,7 +5,7 @@
 namespace API.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -59,6 +59,7 @@ namespace API.Migrations
                     Username = table.Column<string>(type: "nvarchar(16)", maxLength: 16, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PasswordSalt = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Bio = table.Column<string>(type: "nvarchar(512)", maxLength: 512, nullable: false),
                     ProfilePicturePath = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
                     PublicProfileVisibility = table.Column<bool>(type: "bit", nullable: false)

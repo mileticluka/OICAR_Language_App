@@ -9,6 +9,7 @@ namespace API.Helper
         public MappingProfile()
         {
             CreateMap<Game, GameDTO>().ReverseMap();
+            CreateMap<Language, LanguageDTO>().ReverseMap();
             CreateMap<GameFillBlank, GameFillBlankDTO>().ReverseMap();
             CreateMap<GameFlashCard, GameFlashCardDTO>().ReverseMap();
             CreateMap<GamePickSentence, GamePickSentence>().ReverseMap();

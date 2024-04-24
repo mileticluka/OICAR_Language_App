@@ -16,13 +16,10 @@ namespace DAL.Repository
             random = new Random();
         }
 
-        public Game GetGame(Type type, int id)
+        public IList<T> GetGames<T>(Language language)
         {
-            return GetGames<GameFillBlank>().FirstOrDefault(p => p.Id == id);
-        }
+            // TODO: actually filter by language
 
-        public IList<T> GetGames<T>()
-        {
             if (typeof(T) == typeof(GameFillBlank)) {
                 IList<GameFillBlank> games = new List<GameFillBlank>();
                 games.Concat(ctx.GameFillBlank.ToList());
@@ -55,9 +52,9 @@ namespace DAL.Repository
             return new List<T>();
         }
 
-        public T GetRandomGame<T>()
+        public T GetRandomGame<T>(Language language)
         {
-            IList<T> games = GetGames<T>();
+            IList<T> games = GetGames<T>(language);
 
             T game = games[random.Next(games.Count)];
             return game;

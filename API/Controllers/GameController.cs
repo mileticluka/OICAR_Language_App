@@ -2,58 +2,75 @@
 using DAL.DTO;
 using DAL.Interfaces;
 using DAL.Models;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
     [Route("api/")]
+    [Authorize]
     [ApiController]
     public class GameController : ControllerBase
     {
         private readonly IGameRepository gameRepository;
+        private readonly ILanguageRepository languageRepository;
         private readonly IMapper mapper;
 
-        public GameController(IGameRepository gameRepository, IMapper mapper)
+        public GameController(IGameRepository gameRepository, ILanguageRepository languageRepository, IMapper mapper)
         {
             this.gameRepository = gameRepository;
+            this.languageRepository = languageRepository;
             this.mapper = mapper;
         }
 
-        [HttpGet("get-game/{type}")]
-        public ActionResult<GameDTO> GetGameFillBlank(string? type)
+        [HttpGet("get-game/{langId}/{type}")]
+        public ActionResult<GameDTO> GetGameFillBlank(int langId, string? type)
         {
             if (type == null)
             {
+                ModelState.AddModelError("", "Invalid game type");
+                goto error;
+            }
+
+            Language? language = languageRepository.GetLanguage(langId);
+            if (language == null)
+            {
+                ModelState.AddModelError("", "Language does not exist");
                 goto error;
             }
 
             if (type.Equals("fill-blank"))
             {
-                GameFillBlank game = gameRepository.GetRandomGame<GameFillBlank>();
+                GameFillBlank game = gameRepository.GetRandomGame<GameFillBlank>(language);
                 GameFillBlankDTO dto = mapper.Map<GameFillBlankDTO>(game);
                 return Ok(dto);
             }
             else if (type.Equals("flash-cards"))
             {
-                GameFlashCard game = gameRepository.GetRandomGame<GameFlashCard>();
+                GameFlashCard game = gameRepository.GetRandomGame<GameFlashCard>(language);
                 GameFlashCardDTO dto = mapper.Map<GameFlashCardDTO>(game);
                 return Ok(dto);
             } else if (type.Equals("pick-sentence"))
             {
-                GamePickSentence game = gameRepository.GetRandomGame<GamePickSentence>();
+                GamePickSentence game = gameRepository.GetRandomGame<GamePickSentence>(language);
                 GamePickSentenceDTO dto = mapper.Map<GamePickSentenceDTO>(game);
                 return Ok(dto);
             }
 
             error:
-            ModelState.AddModelError("", "Invalid game type");
             return (StatusCode(400, ModelState));
         }
 
-        [HttpGet("respond")]
-        public ActionResult<GameDTO> Respond(GameDTO dto)
+        [HttpPost("respond/{langId}/fill-blank")]
+        public ActionResult<GameDTO> RespondFillBlank(GameFillBlankDTO dto)
         {
+            if (!dto.GameType.Equals("fill-blank"))
+            {
+                return BadRequest();
+            }
+
+
+
             return Ok(dto);
         }
     }
