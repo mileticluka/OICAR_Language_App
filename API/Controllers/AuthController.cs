@@ -36,6 +36,7 @@ namespace API.Controllers
             {
                 var authClaims = new List<Claim>
                 {
+                    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                     new Claim(ClaimTypes.Name, user.Username),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 };
@@ -52,6 +53,7 @@ namespace API.Controllers
 
                 return Ok(new
                 {
+                    id = user.Id,
                     username = user.Username,
                     token = new JwtSecurityTokenHandler().WriteToken(token),
                     expiration = token.ValidTo
