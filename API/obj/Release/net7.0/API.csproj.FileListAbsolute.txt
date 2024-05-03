@@ -84,3 +84,6 @@ D:\VUA\OICAR\API\obj\Release\net7.0\refint\API.dll
 D:\VUA\OICAR\API\obj\Release\net7.0\API.pdb
 D:\VUA\OICAR\API\obj\Release\net7.0\API.genruntimeconfig.cache
 D:\VUA\OICAR\API\obj\Release\net7.0\ref\API.dll
+D:\VUA\OICAR\API\bin\Release\net7.0\MySqlConnector.dll
+D:\VUA\OICAR\API\bin\Release\net7.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\VUA\OICAR\API\bin\Release\net7.0\API.staticwebassets.runtime.json

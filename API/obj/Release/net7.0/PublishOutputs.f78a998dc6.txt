@@ -29,8 +29,10 @@ D:\VUA\OICAR\API\obj\Release\net7.0\PubTmp\Out\Microsoft.IdentityModel.Tokens.dl
 D:\VUA\OICAR\API\obj\Release\net7.0\PubTmp\Out\Microsoft.OpenApi.dll
 D:\VUA\OICAR\API\obj\Release\net7.0\PubTmp\Out\Microsoft.SqlServer.Server.dll
 D:\VUA\OICAR\API\obj\Release\net7.0\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
+D:\VUA\OICAR\API\obj\Release\net7.0\PubTmp\Out\MySqlConnector.dll
 D:\VUA\OICAR\API\obj\Release\net7.0\PubTmp\Out\Newtonsoft.Json.dll
 D:\VUA\OICAR\API\obj\Release\net7.0\PubTmp\Out\Newtonsoft.Json.Bson.dll
+D:\VUA\OICAR\API\obj\Release\net7.0\PubTmp\Out\Pomelo.EntityFrameworkCore.MySql.dll
 D:\VUA\OICAR\API\obj\Release\net7.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 D:\VUA\OICAR\API\obj\Release\net7.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\VUA\OICAR\API\obj\Release\net7.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

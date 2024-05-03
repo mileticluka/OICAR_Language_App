@@ -1,7 +1,6 @@
-﻿using DAL.DTO;
-using DAL.Interfaces;
+﻿using DAL.Interfaces;
 using DAL.Models;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repository
 {
@@ -9,55 +8,62 @@ namespace DAL.Repository
     {
         private readonly DataContext ctx;
         private readonly Random random;
+        private static Dictionary<int, Game> activeGames = new Dictionary<int, Game>();
 
         public GameRepository(DataContext context)
         {
-            ctx = context;
-            random = new Random();
+            this.ctx = context;
+            this.random = new Random();
         }
-
-        public IList<T> GetGames<T>(Language language)
+        
+        public IList<T> GetGames<T>(Language language) where T : Game
         {
             // TODO: actually filter by language
 
             if (typeof(T) == typeof(GameFillBlank)) {
-                IList<GameFillBlank> games = new List<GameFillBlank>();
-                games.Concat(ctx.GameFillBlank.ToList());
-
-                games.Add(new GameFillBlank()
-                {
-                    Id = 1,
-                    ContextImageId = 1,
-                    LanguageId = 1,
-                    Sentence = "Hello world"
-                });
+                var list = ctx.GameFillBlank.Include(gfb => gfb.ContextImage);
+                IList<GameFillBlank> games = list.ToList();
 
                 return (IList<T>) games;
             } else if (typeof(T) == typeof(GameFlashCard)) {
-                IList<GameFlashCard> games = new List<GameFlashCard>();
-                games.Concat(ctx.GameFlashCard.ToList());
-
-                games.Add(new GameFlashCard());
+                IList<GameFlashCard> games = ctx.GameFlashCard.ToList();
 
                 return (IList<T>) games;
             } else if (typeof(T) == typeof(GamePickSentence)) {
-                IList<GamePickSentence> games = new List<GamePickSentence>();
-                games.Concat(ctx.GamePickSentence.ToList());
-
-                games.Add(new GamePickSentence());
-
+                IList<GamePickSentence> games = ctx.GamePickSentence.ToList();
+                
                 return (IList<T>) games;
             }
 
             return new List<T>();
         }
 
-        public T GetRandomGame<T>(Language language)
+        public T GetRandomGame<T>(Language language) where T : Game
         {
             IList<T> games = GetGames<T>(language);
 
             T game = games[random.Next(games.Count)];
             return game;
+        }
+
+        public T GetGame<T>(int userId) where T : Game
+        {
+            return (T)activeGames[userId];
+        }
+
+        public bool IsPlaying(int userId)
+        {
+            return activeGames.ContainsKey(userId);
+        }
+
+        public void StartGame(int userId, Game game)
+        {
+            activeGames[userId] = game;
+        }
+
+        public void EndGame(int userId)
+        {
+            activeGames.Remove(userId);
         }
     }
 }

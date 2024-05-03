@@ -11,6 +11,7 @@ namespace API.Helper
             CreateMap<Game, GameDTO>().ReverseMap();
             CreateMap<User, UserDTO>().ReverseMap();
             CreateMap<Language, LanguageDTO>().ReverseMap();
+            CreateMap<ContextImage, ContextImageDTO>().ReverseMap();
             CreateMap<LanguageStat, LanguageStatDTO>().ReverseMap();
             CreateMap<GameFillBlank, GameFillBlankDTO>().ReverseMap();
             CreateMap<GameFlashCard, GameFlashCardDTO>().ReverseMap();

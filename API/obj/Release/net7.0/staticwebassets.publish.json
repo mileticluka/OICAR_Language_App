@@ -1,11 +1,77 @@
 {
   "Version": 1,
-  "Hash": "BmU7fGuTJpBu0l1oTDCr6d1Z1+7OaO1PIkDzHCAqaAo=",
+  "Hash": "aZZPvIkXAQ/51eQLi/L6a4k/zOuhIhmlhkPMOw2T0/A=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
   "ManifestType": "Publish",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "API\\wwwroot",
+      "Source": "API",
+      "ContentRoot": "D:\\VUA\\OICAR\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\VUA\\OICAR\\API\\wwwroot\\img\\hr.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VUA\\OICAR\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "img/hr.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\hr.png"
+    },
+    {
+      "Identity": "D:\\VUA\\OICAR\\API\\wwwroot\\img\\it.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VUA\\OICAR\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "img/it.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\it.png"
+    },
+    {
+      "Identity": "D:\\VUA\\OICAR\\API\\wwwroot\\img\\nala.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VUA\\OICAR\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "img/nala.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\nala.png"
+    }
+  ]
 }
