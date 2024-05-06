@@ -10,15 +10,7 @@ namespace DAL.DTO
     public class GameDTO
     {
         public int Id { get; set; }
-        public string? GameType { get; set; }
-
-        public GameDTO(string gameType) { 
-            this.GameType = gameType;
-        }
-
-        public GameDTO()
-        {
-
-        }
+        public LanguageDTO Language { get; set; }
+        public ContextImageDTO ContextImage { get; set; }
     }
 }

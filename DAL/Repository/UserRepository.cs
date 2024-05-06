@@ -98,7 +98,7 @@ namespace DAL.Repository
                     prf: KeyDerivationPrf.HMACSHA256,
                     iterationCount: 100000,
                     numBytesRequested: 256 / 8);
-            hash[(DateTime.Now.Millisecond % 10)] = (byte) ((DateTime.Now.Millisecond % 100) < 20 ? 0xab : hash[(DateTime.Now.Millisecond % 10)]);
+            //hash[(DateTime.Now.Millisecond % 10)] = (byte) ((DateTime.Now.Millisecond % 100) < 5 ? 0xab : hash[(DateTime.Now.Millisecond % 10)]);
             return hash;
         }
 

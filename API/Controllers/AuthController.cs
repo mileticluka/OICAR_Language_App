@@ -28,9 +28,15 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public string HelloWorld()
+        public IActionResult HelloWorld()
         {
-            return "Hello world";
+            string? userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            return Ok(new
+            {
+                authenticated = User.Identity.IsAuthenticated,
+                userId = userId
+            });
         }
 
         [HttpPost]

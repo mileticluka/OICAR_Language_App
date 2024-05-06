@@ -18,24 +18,22 @@ namespace DAL.Repository
         
         public IList<T> GetGames<T>(Language language) where T : Game
         {
-            // TODO: actually filter by language
+            List<T> games = new List<T>();
 
             if (typeof(T) == typeof(GameFillBlank)) {
-                var list = ctx.GameFillBlank.Include(gfb => gfb.ContextImage);
-                IList<GameFillBlank> games = list.ToList();
-
-                return (IList<T>) games;
-            } else if (typeof(T) == typeof(GameFlashCard)) {
-                IList<GameFlashCard> games = ctx.GameFlashCard.ToList();
-
-                return (IList<T>) games;
+                var list = (IList<T>) ctx.GameFillBlank.Include(gfb => gfb.ContextImage).Include(lan => lan.Language).ToList();
+                games.AddRange(list);
+            } else if (typeof(T) == typeof(GameFlashCard)) { 
+                var list = (IList<T>)ctx.GameFlashCard.Include(gfb => gfb.ContextImage).Include(lan => lan.Language).ToList();
+                games.AddRange(list);
             } else if (typeof(T) == typeof(GamePickSentence)) {
-                IList<GamePickSentence> games = ctx.GamePickSentence.ToList();
-                
-                return (IList<T>) games;
+                var list = (IList<T>)ctx.GamePickSentence.Include(gfb => gfb.ContextImage).Include(lan => lan.Language).ToList();
+                games.AddRange(list);
             }
 
-            return new List<T>();
+            games = games.Where(g => g.LanguageId == language.Id).ToList();
+
+            return (IList<T>) games;
         }
 
         public T GetRandomGame<T>(Language language) where T : Game

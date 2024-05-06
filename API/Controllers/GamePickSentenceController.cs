@@ -7,16 +7,16 @@ using System.Security.Claims;
 
 namespace API.Controllers
 {
-    [Route("api/game/fill-blank")]
+    [Route("api/game/pick-sentence")]
     [ApiController]
-    public class GameFillBlankController : ControllerBase
+    public class GamePickSentenceController : ControllerBase
     {
         private readonly IGameRepository gameRepository;
         private readonly ILanguageRepository languageRepository;
         private readonly IMapper mapper;
         private readonly Random random;
 
-        public GameFillBlankController(IGameRepository gameRepository, ILanguageRepository languageRepository, IMapper mapper)
+        public GamePickSentenceController(IGameRepository gameRepository, ILanguageRepository languageRepository, IMapper mapper)
         {
             this.gameRepository = gameRepository;
             this.languageRepository = languageRepository;
@@ -25,7 +25,7 @@ namespace API.Controllers
         }
 
         [HttpGet("{langId}")]
-        public ActionResult<GameFillBlankDTO> GetGame(int langId)
+        public ActionResult<GamePickSentenceDTO> GetGame(int langId)
         {
             Language? language = languageRepository.GetLanguage(langId);
             if (language == null)
@@ -48,13 +48,19 @@ namespace API.Controllers
                 goto error;
             }
 
-            GameFillBlank game = gameRepository.GetRandomGame<GameFillBlank>(language);
-            string[] words = game.Sentence.Split(" ");
-            words[random.Next(words.Length)] = "_";
+            GamePickSentence game = gameRepository.GetRandomGame<GamePickSentence>(language);
+            HashSet<string> answers = new HashSet<string>();
+            answers.Add(game.AnswerSentence);
+            // We'll get other answers by getting them from other random games
+            for (int i = 0; answers.Count < 3 && i < 50 /* max inters */; i++)
+            {
+                answers.Add(gameRepository.GetRandomGame<GamePickSentence>(language).AnswerSentence);
+            }
 
-            GameFillBlankDTO dto = mapper.Map<GameFillBlankDTO>(game);
-            dto.Sentence = string.Join(" ", words);
-
+            GamePickSentenceDTO dto = mapper.Map<GamePickSentenceDTO>(game);
+            dto.Answers = (IList<string>) answers.ToList().OrderBy(item => random.Next()).ToList();
+ //           dto.AnswerSentence = null;    // for development purposes we will deliver answer sentence
+            
             gameRepository.StartGame(intUserId, game);
 
             return Ok(dto);
@@ -64,7 +70,7 @@ namespace API.Controllers
         }
 
         [HttpPost()]
-        public ActionResult<GameFillBlankDTO> RespondFillBlank([FromBody] GameSentenceResponseDTO response)
+        public ActionResult<GamePickSentenceDTO> RespondFillBlank([FromBody] GameSentenceResponseDTO response)
         {
             string? userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (userId == null)
@@ -80,8 +86,8 @@ namespace API.Controllers
                 goto error;
             }
 
-            GameFillBlank savedState = gameRepository.GetGame<GameFillBlank>(intUserId);
-            if (savedState.Sentence.ToLower().Equals(response.Sentence.ToLower()))
+            GamePickSentence savedState = gameRepository.GetGame<GamePickSentence>(intUserId);
+            if (savedState.AnswerSentence.ToLower().Equals(response.Sentence.ToLower()))
             {
                 gameRepository.EndGame(intUserId);
                 return Ok();
@@ -94,7 +100,7 @@ namespace API.Controllers
         }
 
         [HttpDelete()]
-        public ActionResult<GameFillBlankDTO> DeleteGame()
+        public ActionResult<GamePickSentenceDTO> DeleteGame()
         {
             string? userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (userId == null)
@@ -112,8 +118,9 @@ namespace API.Controllers
                 goto error;
             }
 
-            GameFillBlankDTO dto = mapper.Map<GameFillBlankDTO>(gameRepository.GetGame<GameFillBlank>(intUserId));
+            GamePickSentenceDTO dto = mapper.Map<GamePickSentenceDTO>(gameRepository.GetGame<GamePickSentence>(intUserId));
             gameRepository.EndGame(intUserId);
+
             return Ok(dto);
         error:
             return (StatusCode(400, ModelState));

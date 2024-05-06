@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace DAL.DTO
 {
-    public class GamePickSentenceDTO : GameDTO
+    public class GameSentenceResponseDTO
     {
-        public IList<string> Answers { get; set; }
-        public string? AnswerSentence { get; set; }
+        public string Sentence { get; set; }
     }
 }

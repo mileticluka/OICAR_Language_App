@@ -9,14 +9,6 @@ namespace DAL.Models
 {
     public class GamePickSentence : Game
     {
-        [ForeignKey(nameof(Language))]
-        public int LanguageId { get; set; }
-        public Language Language { get; set; }
-
-        [ForeignKey(nameof(ContextImage))]
-        public int ContextImageId { get; set; }
-        public ContextImage ContextImage { get; set; }
-
         public string AnswerSentence { get; set; }
     }
 }

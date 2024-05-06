@@ -15,7 +15,7 @@ namespace API.Helper
             CreateMap<LanguageStat, LanguageStatDTO>().ReverseMap();
             CreateMap<GameFillBlank, GameFillBlankDTO>().ReverseMap();
             CreateMap<GameFlashCard, GameFlashCardDTO>().ReverseMap();
-            CreateMap<GamePickSentence, GamePickSentence>().ReverseMap();
+            CreateMap<GamePickSentence, GamePickSentenceDTO>().ReverseMap();
 
 
         }

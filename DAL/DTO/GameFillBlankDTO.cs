@@ -10,8 +10,6 @@ namespace DAL.DTO
 {
     public class GameFillBlankDTO : GameDTO
     {
-        public LanguageDTO Language { get; set; }
-        public ContextImageDTO ContextImage { get; set; }
         public string Sentence { get; set; }
     }
 }
