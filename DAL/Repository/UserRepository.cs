@@ -124,5 +124,40 @@ namespace DAL.Repository
 
             return true;
         }
+
+        //CRUD FOR ADMIN PANEL
+
+        public void CreateUser(User user)
+        {
+            if (ctx.User.Any(x => x.Username.Equals(user.Username.ToLower().Trim())))
+                throw new InvalidOperationException("Username already exists.");
+
+            if (ctx.User.Any(x => x.Email.Equals(user.Email.ToLower().Trim())))
+                throw new InvalidOperationException("This E-Mail is already in use.");
+
+            ctx.User.Add(user);
+            ctx.SaveChanges();
+        }
+
+        public void UpdateUser(User user)
+        {
+            ctx.Update(user);
+            ctx.SaveChanges();
+        }
+
+        public void DeleteUser(int userId)
+        {
+            var user = ctx.User.FirstOrDefault(u => u.Id == userId);
+            if (user != null)
+            {
+                ctx.User.Remove(user);
+                ctx.SaveChanges();
+            }
+        }
+
+        public IList<User> GetAll()
+        {
+            return ctx.User.ToList();
+        }
     }
 }

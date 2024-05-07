@@ -10,8 +10,6 @@ namespace DAL.DTO
     {
         public string Text { get; set; }
 
-        public IList<string> Answers { get; set; }
-
         public string? Answer { get; set; }
     }
 }

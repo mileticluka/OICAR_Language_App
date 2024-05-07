@@ -15,25 +15,33 @@ namespace DAL.Repository
             this.ctx = context;
             this.random = new Random();
         }
-        
-        public IList<T> GetGames<T>(Language language) where T : Game
+
+        public IList<T> GetGames<T>() where T : Game
         {
             List<T> games = new List<T>();
 
-            if (typeof(T) == typeof(GameFillBlank)) {
-                var list = (IList<T>) ctx.GameFillBlank.Include(gfb => gfb.ContextImage).Include(lan => lan.Language).ToList();
+            if (typeof(T) == typeof(GameFillBlank))
+            {
+                var list = (IList<T>)ctx.GameFillBlank.Include(gfb => gfb.ContextImage).Include(lan => lan.Language).ToList();
                 games.AddRange(list);
-            } else if (typeof(T) == typeof(GameFlashCard)) { 
-                var list = (IList<T>)ctx.GameFlashCard.Include(gfb => gfb.ContextImage).Include(lan => lan.Language).ToList();
+            }
+            else if (typeof(T) == typeof(GameFlashCard))
+            {
+                var list = (IList<T>)ctx.GameFlashCard.Include(gfc => gfc.ContextImage).Include(lan => lan.Language).ToList();
                 games.AddRange(list);
-            } else if (typeof(T) == typeof(GamePickSentence)) {
-                var list = (IList<T>)ctx.GamePickSentence.Include(gfb => gfb.ContextImage).Include(lan => lan.Language).ToList();
+            }
+            else if (typeof(T) == typeof(GamePickSentence))
+            {
+                var list = (IList<T>)ctx.GamePickSentence.Include(gps => gps.ContextImage).Include(lan => lan.Language).ToList();
                 games.AddRange(list);
             }
 
-            games = games.Where(g => g.LanguageId == language.Id).ToList();
+            return games;
+        }
 
-            return (IList<T>) games;
+        public IList<T> GetGames<T>(Language language) where T : Game
+        {
+            return GetGames<T>().Where(g => g.LanguageId == language.Id).ToList();
         }
 
         public T GetRandomGame<T>(Language language) where T : Game
@@ -62,6 +70,34 @@ namespace DAL.Repository
         public void EndGame(int userId)
         {
             activeGames.Remove(userId);
+        }
+
+
+        //CRUD FOR ADMIN PANEL
+
+        public T? FindGameById<T>(int id) where T : Game
+        {
+            return GetGames<T>().FirstOrDefault(g => g.Id == id);
+        }
+
+        public void CreateGame(Game game)
+        {
+            ctx.Add(game);
+            ctx.SaveChanges();
+        }
+
+        public void UpdateGame(Game game)
+        {
+
+            ctx.Update(game);
+            ctx.SaveChanges();
+
+        }
+
+        public void DeleteGame(Game game)
+        {
+            ctx.Remove(game);
+            ctx.SaveChanges();
         }
     }
 }

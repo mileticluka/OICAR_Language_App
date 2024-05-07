@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\API\\wwwroot\\img\\hr.png",
+      "PackagePath": "staticwebassets\\img\\hr.png"
+    },
+    {
+      "Id": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\API\\wwwroot\\img\\it.png",
+      "PackagePath": "staticwebassets\\img\\it.png"
+    },
+    {
+      "Id": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\API\\wwwroot\\img\\nala.png",
+      "PackagePath": "staticwebassets\\img\\nala.png"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.API.props",
+      "PackagePath": "build\\API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.API.props",
+      "PackagePath": "buildMultiTargeting\\API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.API.props",
+      "PackagePath": "buildTransitive\\API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

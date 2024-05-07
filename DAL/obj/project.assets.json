@@ -3147,23 +3147,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Users\\Luka\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VUA\\OICAR\\DAL\\DAL.csproj",
+      "projectUniqueName": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "D:\\VUA\\OICAR\\DAL\\DAL.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\VUA\\OICAR\\DAL\\obj\\",
+      "projectPath": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\DAL\\DAL.csproj",
+      "packagesPath": "C:\\Users\\Luka\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Luka\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

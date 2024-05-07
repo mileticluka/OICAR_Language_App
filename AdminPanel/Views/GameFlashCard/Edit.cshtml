@@ -1,0 +1,84 @@
+﻿@model DAL.Models.GameFlashCard
+@inject DAL.Interfaces.ILanguageRepository LanguageRepository
+
+
+@{
+    ViewData["Title"] = "Create";
+    var languages = LanguageRepository.GetAllLanguages();
+    var languageItems = new SelectList(languages, "Id", "Name");
+}
+
+<h1>Edit</h1>
+
+<h4>GameFlashCard</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" readonly />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text" class="control-label"></label>
+                <input asp-for="Text" class="form-control" />
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Answer" class="control-label"></label>
+                <input asp-for="Answer" class="form-control" />
+                <span asp-validation-for="Answer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LanguageId" class="control-label"></label>
+                @Html.DropDownListFor(model => model.LanguageId, languageItems, "-- Select Language --", new { @class = "form-control" })
+                <span asp-validation-for="LanguageId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContextImage.ImagePath" class="control-label"></label>
+                <input asp-for="ContextImage.ImagePath" id="ImagePathInput" class="form-control" />
+                <span asp-validation-for="ContextImage.ImagePath" class="text-danger"></span>
+                <div id="ImagePreviewContainer"></div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        // Function to load image preview
+        function loadImagePreview() {
+            var imagePath = $('#ImagePathInput').val(); // Get the image path from input field
+
+            // Check if the image path is not empty
+            if (imagePath) {
+                // Create a new image element
+                var img = $('<img>').attr('src', imagePath).attr('alt', 'Image Preview').addClass('img-fluid');
+
+                // Append the image element to the container
+                $('#ImagePreviewContainer').empty().append(img);
+            } else {
+                // If image path is empty, clear the container
+                $('#ImagePreviewContainer').empty();
+            }
+        }
+
+        // Listen for changes in the image path input field
+        $('#ImagePathInput').on('input', loadImagePreview);
+
+        // Load image preview initially (in case there's already a value)
+        loadImagePreview();
+    </script>
+}

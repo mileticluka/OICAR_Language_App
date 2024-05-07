@@ -79,12 +79,9 @@ builder.Services
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+//Changed to be on deployment
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseStaticFiles(new StaticFileOptions()
 {

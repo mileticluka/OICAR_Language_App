@@ -10,6 +10,7 @@ namespace DAL.Interfaces
 {
     public interface IGameRepository
     {
+        IList<T> GetGames<T>() where T : Game;
         public IList<T> GetGames<T>(Language language) where T : Game;
         public T GetRandomGame<T>(Language language) where T : Game;
 
@@ -18,5 +19,11 @@ namespace DAL.Interfaces
         public void StartGame(int userId, Game game);
         public bool IsPlaying(int userId);
         public void EndGame(int userId);
+
+        //CRUD FOR ADMIN PANEL
+        void DeleteGame(Game game);
+        void UpdateGame(Game game);
+        void CreateGame(Game game);
+        T? FindGameById<T>(int id) where T : Game;
     }
 }

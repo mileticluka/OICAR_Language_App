@@ -19,5 +19,11 @@ namespace DAL.Interfaces
         public bool Authenticate(LoginDTO login);
         public bool CanCreate(RegisterDTO register);
         public void Register(RegisterDTO register);
+
+        //CRUD FOR ADMIN PANEL
+        public IList<User> GetAll();
+        void DeleteUser(int userId);
+        void UpdateUser(User user);
+        void CreateUser(User user);
     }
 }
