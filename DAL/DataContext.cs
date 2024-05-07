@@ -28,6 +28,7 @@ namespace DAL
        
         public DbSet<User> User { get; set; }
         public DbSet<Language> Language { get; set; }
+        public DbSet<AdminUser> AdminUser { get; set; }
         public DbSet<GameObject> GameObject { get; set; }
         public DbSet<ContextImage> ContextImage { get; set; }
         public DbSet<LanguageStat> LanguageStat { get; set; }
