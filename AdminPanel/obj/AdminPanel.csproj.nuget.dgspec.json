@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VUA\\OICAR\\AdminPanel\\AdminPanel.csproj": {}
+    "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\AdminPanel\\AdminPanel.csproj": {}
   },
   "projects": {
-    "D:\\VUA\\OICAR\\AdminPanel\\AdminPanel.csproj": {
+    "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\AdminPanel\\AdminPanel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VUA\\OICAR\\AdminPanel\\AdminPanel.csproj",
+        "projectUniqueName": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\AdminPanel\\AdminPanel.csproj",
         "projectName": "AdminPanel",
-        "projectPath": "D:\\VUA\\OICAR\\AdminPanel\\AdminPanel.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\VUA\\OICAR\\AdminPanel\\obj\\",
+        "projectPath": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\AdminPanel\\AdminPanel.csproj",
+        "packagesPath": "C:\\Users\\Luka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\AdminPanel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Luka\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\VUA\\OICAR\\DAL\\DAL.csproj": {
-                "projectPath": "D:\\VUA\\OICAR\\DAL\\DAL.csproj"
+              "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\DAL\\DAL.csproj"
               }
             }
           }
@@ -80,20 +80,20 @@
         }
       }
     },
-    "D:\\VUA\\OICAR\\DAL\\DAL.csproj": {
+    "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VUA\\OICAR\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "D:\\VUA\\OICAR\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\VUA\\OICAR\\DAL\\obj\\",
+        "projectPath": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\Luka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Luka\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

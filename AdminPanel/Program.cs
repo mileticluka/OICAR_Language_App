@@ -1,6 +1,7 @@
 using DAL;
 using DAL.Interfaces;
 using DAL.Repository;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +23,13 @@ builder.Services.AddScoped<ILanguageRepository, LanguageRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IStatsRepository, StatsRepository>();
 builder.Services.AddScoped<IContextImageRepository, ContextImageRepository>();
+builder.Services.AddScoped<IAdminUserRepository, AdminUserRepository>();
+
+builder.Services
+    .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options => {
+        options.LoginPath = "/login";
+    });
 
 
 var app = builder.Build();
@@ -35,6 +43,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

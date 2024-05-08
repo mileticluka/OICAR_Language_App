@@ -1,11 +1,13 @@
 ﻿using AutoMapper;
 using DAL.Interfaces;
 using DAL.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AdminPanel.Controllers
 {
+    [Authorize]
     public class GameFlashCardController : Controller
     {
         private readonly IGameRepository gameRepository;

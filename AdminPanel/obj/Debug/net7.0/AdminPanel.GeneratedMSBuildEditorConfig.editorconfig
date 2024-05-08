@@ -9,99 +9,103 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AdminPanel
 build_property.RootNamespace = AdminPanel
-build_property.ProjectDir = D:\VUA\OICAR\AdminPanel\
+build_property.ProjectDir = C:\Users\Luka\Desktop\OICAR\OICAR_Language_App\AdminPanel\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\VUA\OICAR\AdminPanel
+build_property.MSBuildProjectDirectory = C:\Users\Luka\Desktop\OICAR\OICAR_Language_App\AdminPanel
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/VUA/OICAR/AdminPanel/Views/ContextImage/Details.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/ContextImage/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGV4dEltYWdlXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/ContextImage/Index.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/ContextImage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGV4dEltYWdlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/GameFillBlank/Create.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/GameFillBlank/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZUZpbGxCbGFua1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/GameFillBlank/Details.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/GameFillBlank/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZUZpbGxCbGFua1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/GameFillBlank/Edit.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/GameFillBlank/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZUZpbGxCbGFua1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/GameFillBlank/Index.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/GameFillBlank/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZUZpbGxCbGFua1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/GameFlashCard/Create.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/GameFlashCard/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZUZsYXNoQ2FyZFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/GameFlashCard/Details.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/GameFlashCard/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZUZsYXNoQ2FyZFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/GameFlashCard/Edit.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/GameFlashCard/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZUZsYXNoQ2FyZFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/GameFlashCard/Index.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/GameFlashCard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZUZsYXNoQ2FyZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/GamePickSentence/Create.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/GamePickSentence/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZVBpY2tTZW50ZW5jZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/GamePickSentence/Details.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/GamePickSentence/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZVBpY2tTZW50ZW5jZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/GamePickSentence/Edit.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/GamePickSentence/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZVBpY2tTZW50ZW5jZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/GamePickSentence/Index.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/GamePickSentence/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZVBpY2tTZW50ZW5jZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/Home/Index.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/Shared/Error.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/User/Details.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/User/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/User/Index.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/_ViewImports.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/_ViewStart.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VUA/OICAR/AdminPanel/Views/Shared/_Layout.cshtml]
+[C:/Users/Luka/Desktop/OICAR/OICAR_Language_App/AdminPanel/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-cxfutip2kg

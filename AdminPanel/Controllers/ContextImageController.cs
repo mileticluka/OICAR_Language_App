@@ -1,11 +1,13 @@
 ﻿using AutoMapper;
 using DAL.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AdminPanel.Controllers
 {
+    [Authorize]
     public class ContextImageController : Controller
     {
 

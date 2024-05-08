@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gUA7WHKNhe5SUgFptjn9uVjIcsA18yGwqMK0bJrVv4E=",
+  "Hash": "SrJS/IkYLIDeKTWEfRjfSHK3esK69EGqDFFH33I94Ao=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "API\\wwwroot",
       "Source": "API",
-      "ContentRoot": "D:\\VUA\\OICAR\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\VUA\\OICAR\\API\\wwwroot\\img\\hr.png",
+      "Identity": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\API\\wwwroot\\img\\hr.png",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VUA\\OICAR\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "img/hr.png",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\img\\hr.png"
     },
     {
-      "Identity": "D:\\VUA\\OICAR\\API\\wwwroot\\img\\it.png",
+      "Identity": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\API\\wwwroot\\img\\it.png",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VUA\\OICAR\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "img/it.png",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\img\\it.png"
     },
     {
-      "Identity": "D:\\VUA\\OICAR\\API\\wwwroot\\img\\nala.png",
+      "Identity": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\API\\wwwroot\\img\\nala.png",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VUA\\OICAR\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Luka\\Desktop\\OICAR\\OICAR_Language_App\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "img/nala.png",
       "AssetKind": "All",

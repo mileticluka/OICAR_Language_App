@@ -1,16 +1,17 @@
 ﻿using AdminPanel.Models;
 using AutoMapper;
 using DAL.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AdminPanel.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
 
         private readonly IUserRepository userRepository;
         private readonly IMapper mapper;
-        private readonly IConfiguration configuration;
 
         public UserController(IUserRepository userRepository, IMapper mapper)
         {
