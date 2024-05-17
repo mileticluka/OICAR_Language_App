@@ -17,68 +17,37 @@ namespace API.Controllers
         private readonly IUserRepository userRepository;
         private readonly ILanguageRepository languageRepository;
         private readonly IMapper mapper;
-        private readonly IConfiguration configuration;
 
-        public StatController(IStatsRepository statsRepository, IUserRepository userRepository, ILanguageRepository languageRepository, IMapper mapper, IConfiguration configuration)
+        public StatController(IStatsRepository statsRepository, IUserRepository userRepository, ILanguageRepository languageRepository, IMapper mapper)
         {
             this.statsRepository = statsRepository;
             this.userRepository = userRepository;
             this.languageRepository = languageRepository;
             this.mapper = mapper;
-            this.configuration = configuration;
         }
 
-
-        [HttpGet("{languageId}/{statName}")]
-        public ActionResult<IList<LanguageStat>> GetStatForUser(int languageId, string statName)
+        [HttpGet("{langId}")]
+        public ActionResult<IList<LanguageStatDTO>> GetStats(int langId)
         {
-            string? userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            User? user = userRepository.GetUser(int.Parse(userId));
-
-            if (user == null)
-            {
-                ModelState.AddModelError("", "User doesn't exist.");
-                return (StatusCode(400, ModelState));
-            }
-
-            Language? language = languageRepository.GetLanguage(languageId);
-
+            Language? language = languageRepository.GetLanguage(langId);
             if (language == null)
             {
-                ModelState.AddModelError("", "Invalid Language.");
-                return (StatusCode(400, ModelState));
+                ModelState.AddModelError("", "Language does not exist");
+                goto error;
             }
 
-            LanguageStat? stat = statsRepository.GetStatForUser(user, language, statName);
-
-            return Ok(mapper.Map<LanguageStatDTO>(stat));
-        }
-
-        [HttpGet("{languageId}")]
-        public ActionResult<IList<LanguageStat>> GetStatsForUser(int languageId)
-        {
             string? userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            User? user = userRepository.GetUser(int.Parse(userId));
-
-            if (user == null)
+            if (userId == null)
             {
-                ModelState.AddModelError("", "User doesn't exist.");
-                return (StatusCode(400, ModelState));
+                ModelState.AddModelError("", "Invalid token. Please login again.");
+                goto error;
             }
+            int intUserId = int.Parse(userId);
 
-            Language? language = languageRepository.GetLanguage(languageId);
-
-            if(language == null)
-            {
-                ModelState.AddModelError("", "Invalid Language.");
-                return (StatusCode(400, ModelState));
-            }
-
-
-            IList<LanguageStat> stats = statsRepository.GetStatsForUser(user, language);
-
-
-            return Ok(mapper.Map<IList<LanguageStatDTO>>(stats));
+            IList<LanguageStatDTO> stats = mapper.Map<List<LanguageStatDTO>>(statsRepository.GetStats(intUserId, langId));
+            return Ok(stats);
+        error:
+            return (StatusCode(400, ModelState));
         }
     }
 }

@@ -10,9 +10,7 @@ namespace DAL.Interfaces
 {
     public interface IStatsRepository
     {
-        public IList<LanguageStat> GetStatsForUser(User user,Language language);
-        public LanguageStat? GetStatForUser(User user, Language language, string statName);
-
+        public IList<LanguageStat> GetStats(int userId, int languageId);
         public LanguageStat AddStat(User user, Language language, string statName, int score);
     }
 }

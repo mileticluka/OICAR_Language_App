@@ -10,9 +10,6 @@ namespace DAL.DTO
 {
     public class LanguageStatDTO
     {
-        public UserDTO User { get; set; }
-
-        public LanguageDTO Language { get; set; }
         public string StatName { get; set; }
         public int Score { get; set; }
     }

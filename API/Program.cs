@@ -80,8 +80,10 @@ builder.Services
 var app = builder.Build();
 
 //Changed to be on deployment
-app.UseSwagger();
-app.UseSwaggerUI();
+if (app.Environment.IsDevelopment()) {
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseStaticFiles(new StaticFileOptions()
 {

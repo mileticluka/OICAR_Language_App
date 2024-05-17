@@ -1,0 +1,5 @@
+D:\VUA\OICAR\AdminPanel\obj\Release\net7.0\linux-x64\PubTmp\Out\appsettings.Development.json
+D:\VUA\OICAR\AdminPanel\obj\Release\net7.0\linux-x64\PubTmp\Out\appsettings.json
+D:\VUA\OICAR\AdminPanel\obj\Release\net7.0\linux-x64\PubTmp\Out\AdminPanel.pdb
+D:\VUA\OICAR\AdminPanel\obj\Release\net7.0\linux-x64\PubTmp\Out\DAL.pdb
+D:\VUA\OICAR\AdminPanel\obj\Release\net7.0\linux-x64\PubTmp\Out\AdminPanel

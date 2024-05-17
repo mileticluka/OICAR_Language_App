@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DAL;
 using DAL.DTO;
 using DAL.Interfaces;
 using DAL.Models;
@@ -13,15 +14,18 @@ namespace API.Controllers
     public class GameFlashCardController : ControllerBase
     {
         private readonly IGameRepository gameRepository;
+        private readonly IUserRepository userRepository;
+        private readonly IStatsRepository statsRepository;
         private readonly ILanguageRepository languageRepository;
         private readonly IMapper mapper;
-        private readonly Random random;
 
-        public GameFlashCardController(IGameRepository gameRepository, ILanguageRepository languageRepository, IMapper mapper)
+        public GameFlashCardController(IGameRepository gameRepository, ILanguageRepository languageRepository, IMapper mapper, IStatsRepository statsRepository, IUserRepository userRepository)
         {
             this.gameRepository = gameRepository;
             this.languageRepository = languageRepository;
             this.mapper = mapper;
+            this.statsRepository = statsRepository;
+            this.userRepository = userRepository;
         }
 
         [HttpGet("{langId}")]
@@ -41,6 +45,13 @@ namespace API.Controllers
                 goto error;
             }
             int intUserId = int.Parse(userId);
+            User? user = userRepository.GetUser(intUserId);
+
+            if (user == null)
+            {
+                ModelState.AddModelError("", "Invalid user. Please login again.");
+                goto error;
+            }
 
             if (gameRepository.IsPlaying(intUserId))
             {
@@ -48,11 +59,12 @@ namespace API.Controllers
                 goto error;
             }
 
-            GameFlashCard game = gameRepository.GetRandomGame<GameFlashCard>(language);
 
+            GameFlashCard game = gameRepository.GetRandomGame<GameFlashCard>(language);
             GameFlashCardDTO dto = mapper.Map<GameFlashCardDTO>(game);
 
             gameRepository.StartGame(intUserId, game);
+            statsRepository.AddStat(user, language, Constants.STAT_FLASH_CARDS_PLAYED, 1);
 
             return Ok(dto);
 
@@ -70,6 +82,12 @@ namespace API.Controllers
                 goto error;
             }
             int intUserId = int.Parse(userId);
+            User? user = userRepository.GetUser(intUserId);
+            if (user == null)
+            {
+                ModelState.AddModelError("", "Invalid user. Please login again.");
+                goto error;
+            }
 
             if (!gameRepository.IsPlaying(intUserId))
             {
@@ -82,6 +100,7 @@ namespace API.Controllers
             if (savedState.Answer.ToLower().Equals(response.Sentence.ToLower()))
             {
                 gameRepository.EndGame(intUserId);
+                statsRepository.AddStat(user, savedState.Language, Constants.STAT_FLASH_CARDS_COMPLETED, 1);
                 return Ok();
             }
 

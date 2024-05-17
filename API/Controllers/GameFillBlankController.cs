@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DAL;
 using DAL.DTO;
 using DAL.Interfaces;
 using DAL.Models;
@@ -12,14 +13,18 @@ namespace API.Controllers
     public class GameFillBlankController : ControllerBase
     {
         private readonly IGameRepository gameRepository;
+        private readonly IUserRepository userRepository;
         private readonly ILanguageRepository languageRepository;
+        private readonly IStatsRepository statsRepository;
         private readonly IMapper mapper;
         private readonly Random random;
 
-        public GameFillBlankController(IGameRepository gameRepository, ILanguageRepository languageRepository, IMapper mapper)
+        public GameFillBlankController(IGameRepository gameRepository, IUserRepository userRepository, ILanguageRepository languageRepository, IStatsRepository statsRepository, IMapper mapper)
         {
             this.gameRepository = gameRepository;
+            this.userRepository = userRepository;
             this.languageRepository = languageRepository;
+            this.statsRepository = statsRepository;
             this.mapper = mapper;
             this.random = new Random();
         }
@@ -41,6 +46,13 @@ namespace API.Controllers
                 goto error;
             }
             int intUserId = int.Parse(userId);
+            User? user = userRepository.GetUser(intUserId);
+
+            if (user == null)
+            {
+                ModelState.AddModelError("", "Invalid user. Please login again.");
+                goto error;
+            }
 
             if (gameRepository.IsPlaying(intUserId))
             {
@@ -56,6 +68,7 @@ namespace API.Controllers
             dto.Sentence = string.Join(" ", words);
 
             gameRepository.StartGame(intUserId, game);
+            statsRepository.AddStat(user, language, Constants.STAT_FILL_BLANK_PLAYED, 1);
 
             return Ok(dto);
 
@@ -72,7 +85,13 @@ namespace API.Controllers
                 ModelState.AddModelError("", "Invalid token. Please login again.");
                 goto error;
             }
-            int intUserId = int.Parse(userId);
+            int intUserId = int.Parse(userId); 
+            User? user = userRepository.GetUser(intUserId);
+            if (user == null)
+            {
+                ModelState.AddModelError("", "Invalid user. Please login again.");
+                goto error;
+            }
 
             if (!gameRepository.IsPlaying(intUserId))
             {
@@ -84,6 +103,7 @@ namespace API.Controllers
             if (savedState.Sentence.ToLower().Equals(response.Sentence.ToLower()))
             {
                 gameRepository.EndGame(intUserId);
+                statsRepository.AddStat(user, savedState.Language, Constants.STAT_FILL_BLANK_COMPLETED, 1);
                 return Ok();
             }
 
