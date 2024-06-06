@@ -25,5 +25,7 @@ namespace DAL.Interfaces
         void UpdateGame(Game game);
         void CreateGame(Game game);
         T? FindGameById<T>(int id) where T : Game;
+
+        IList<T> GetFiltered<T>(int? languageId, String? sentenceContent) where T : Game;
     }
 }

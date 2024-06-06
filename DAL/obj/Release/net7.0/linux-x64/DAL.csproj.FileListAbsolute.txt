@@ -1,0 +1,15 @@
+D:\VUA\OICAR\DAL\bin\Release\net7.0\linux-x64\DAL.deps.json
+D:\VUA\OICAR\DAL\bin\Release\net7.0\linux-x64\DAL.runtimeconfig.json
+D:\VUA\OICAR\DAL\bin\Release\net7.0\linux-x64\DAL.dll
+D:\VUA\OICAR\DAL\bin\Release\net7.0\linux-x64\DAL.pdb
+D:\VUA\OICAR\DAL\obj\Release\net7.0\linux-x64\DAL.csproj.AssemblyReference.cache
+D:\VUA\OICAR\DAL\obj\Release\net7.0\linux-x64\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\VUA\OICAR\DAL\obj\Release\net7.0\linux-x64\DAL.AssemblyInfoInputs.cache
+D:\VUA\OICAR\DAL\obj\Release\net7.0\linux-x64\DAL.AssemblyInfo.cs
+D:\VUA\OICAR\DAL\obj\Release\net7.0\linux-x64\DAL.csproj.CoreCompileInputs.cache
+D:\VUA\OICAR\DAL\obj\Release\net7.0\linux-x64\DAL.sourcelink.json
+D:\VUA\OICAR\DAL\obj\Release\net7.0\linux-x64\DAL.dll
+D:\VUA\OICAR\DAL\obj\Release\net7.0\linux-x64\refint\DAL.dll
+D:\VUA\OICAR\DAL\obj\Release\net7.0\linux-x64\DAL.pdb
+D:\VUA\OICAR\DAL\obj\Release\net7.0\linux-x64\DAL.genruntimeconfig.cache
+D:\VUA\OICAR\DAL\obj\Release\net7.0\linux-x64\ref\DAL.dll

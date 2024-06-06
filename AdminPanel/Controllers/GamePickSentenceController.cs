@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using AdminPanel.Models;
+using AutoMapper;
 using DAL.Interfaces;
 using DAL.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -25,11 +26,17 @@ namespace AdminPanel.Controllers
         }
 
         // GET: GameFillBlankController
-        public ActionResult Index()
+        public ActionResult Index(GamePickSentenceItemListViewModel model)
         {
-            IList<GamePickSentence> games = gameRepository.GetGames<GamePickSentence>();
+            model.Games = gameRepository.GetFiltered<GamePickSentence>(model.LanguageId, model.Content).ToList();
 
-            return View(games);
+            // is ajax
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return PartialView("_ItemsListPartial", model);
+            }
+
+            return View(model);
         }
 
         // GET: GameFillBlankController/Details/5

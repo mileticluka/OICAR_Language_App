@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using AdminPanel.Models;
+using AutoMapper;
+using Azure.Core;
 using DAL.DTO;
 using DAL.Interfaces;
 using DAL.Models;
@@ -24,13 +26,19 @@ namespace AdminPanel.Controllers
             this.contextImageRepository = contextImageRepository;
             this.mapper = mapper;
         }
-
+        
         // GET: GameFillBlankController
-        public ActionResult Index()
+        public ActionResult Index(GameFillBlankItemListViewModel model)
         {
-            IList<GameFillBlank> games = gameRepository.GetGames<GameFillBlank>();
+            model.Games = gameRepository.GetFiltered<GameFillBlank>(model.LanguageId, model.Content).ToList();
 
-            return View(games);
+            // is ajax
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return PartialView("_ItemsListPartial", model);
+            }
+
+            return View(model);
         }
 
         // GET: GameFillBlankController/Details/5

@@ -1,6 +1,7 @@
 ﻿using DAL.Interfaces;
 using DAL.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace DAL.Repository
 {
@@ -98,6 +99,38 @@ namespace DAL.Repository
         {
             ctx.Remove(game);
             ctx.SaveChanges();
+        }
+
+        public IList<T> GetFiltered<T>(int? languageId, string? sentenceContent) where T : Game
+        {
+            IList<T> games = GetGames<T>();
+
+            if (languageId != null)
+            {
+                games = games.Where(g => g.LanguageId == languageId.Value).ToList();
+            }
+
+            if (sentenceContent != null)
+            {
+                if (typeof(T) == typeof(GameFillBlank))
+                {
+                    games = games.Where(g => g != null && (g as GameFillBlank).Sentence.ToLower().Contains(sentenceContent.ToLower())).ToList();
+
+                }
+                else if (typeof(T) == typeof(GameFlashCard))
+                {
+                    games = games.Where(g => g != null 
+                    && ((g as GameFlashCard).Answer.ToLower().Contains(sentenceContent.ToLower())
+                           || (g as GameFlashCard).Text.ToLower().Contains(sentenceContent.ToLower()))).ToList();
+
+                }
+                else if (typeof(T) == typeof(GamePickSentence))
+                {
+                    games = games.Where(g => g != null && (g as GamePickSentence).AnswerSentence.ToLower().Contains(sentenceContent.ToLower())).ToList();
+                }
+            }
+
+            return games.ToList();
         }
     }
 }
