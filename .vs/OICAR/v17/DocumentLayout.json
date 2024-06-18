@@ -1,0 +1,51 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "Z:\\\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7087E70B-08A5-4FD1-AAD4-6BF8340CA280}|Tests\\Tests.csproj|z:\\tests\\apitests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E41AF577-40CF-4BAB-9A1B-92775C150936}|API\\API.csproj|z:\\api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "Z:\\API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "..\\API\\Controllers\\AuthController.cs",
+              "ToolTip": "Z:\\API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "..\\API\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAAGIAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T13:47:25.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApiTests.cs",
+              "DocumentMoniker": "Z:\\Tests\\ApiTests.cs",
+              "RelativeDocumentMoniker": "..\\Tests\\ApiTests.cs",
+              "ToolTip": "Z:\\Tests\\ApiTests.cs",
+              "RelativeToolTip": "..\\Tests\\ApiTests.cs",
+              "ViewState": "AQIAAF4AAAAAAAAAAAAYwGUAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T13:46:13.841Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

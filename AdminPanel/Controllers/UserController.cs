@@ -40,10 +40,8 @@ namespace AdminPanel.Controllers
         // GET: UserController/Delete/5
         public ActionResult Delete(int id)
         {
-
             userRepository.DeleteUser(id);
             return RedirectToAction(nameof(Index));
-
         }
     }
 }
