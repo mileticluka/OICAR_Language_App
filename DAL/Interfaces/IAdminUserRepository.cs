@@ -7,5 +7,7 @@ namespace DAL.Interfaces
     {
         public AdminUser? GetUser(string username);
         public bool Authenticate(LoginDTO login);
+
+        public void CreateUser(string username, string password);
     }
 }

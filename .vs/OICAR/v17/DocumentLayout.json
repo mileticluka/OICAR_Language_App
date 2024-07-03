@@ -3,10 +3,25 @@
   "WorkspaceRootPath": "Z:\\\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7087E70B-08A5-4FD1-AAD4-6BF8340CA280}|Tests\\Tests.csproj|z:\\tests\\apitests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E41AF577-40CF-4BAB-9A1B-92775C150936}|API\\API.csproj|z:\\api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E41AF577-40CF-4BAB-9A1B-92775C150936}|API\\API.csproj|z:\\api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7087E70B-08A5-4FD1-AAD4-6BF8340CA280}|Tests\\Tests.csproj|z:\\tests\\adminpaneltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7087E70B-08A5-4FD1-AAD4-6BF8340CA280}|Tests\\Tests.csproj|z:\\tests\\apitests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEC69A38-44C4-4C80-BDEE-9E9538939DEC}|AdminPanel\\AdminPanel.csproj|z:\\adminpanel\\controllers\\gamefillblankcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEC69A38-44C4-4C80-BDEE-9E9538939DEC}|AdminPanel\\AdminPanel.csproj|z:\\adminpanel\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEC69A38-44C4-4C80-BDEE-9E9538939DEC}|AdminPanel\\AdminPanel.csproj|z:\\adminpanel\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,22 +41,84 @@
               "RelativeDocumentMoniker": "..\\API\\Controllers\\AuthController.cs",
               "ToolTip": "Z:\\API\\Controllers\\AuthController.cs",
               "RelativeToolTip": "..\\API\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAAAGIAAAAFAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAA1wAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T13:47:25.914Z"
+              "WhenOpened": "2024-07-03T18:56:14.651Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "Z:\\API\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "..\\API\\Controllers\\UserController.cs",
+              "ToolTip": "Z:\\API\\Controllers\\UserController.cs",
+              "RelativeToolTip": "..\\API\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAA5wCYAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T18:26:43.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GameFillBlankController.cs",
+              "DocumentMoniker": "Z:\\AdminPanel\\Controllers\\GameFillBlankController.cs",
+              "RelativeDocumentMoniker": "..\\AdminPanel\\Controllers\\GameFillBlankController.cs",
+              "ToolTip": "Z:\\AdminPanel\\Controllers\\GameFillBlankController.cs",
+              "RelativeToolTip": "..\\AdminPanel\\Controllers\\GameFillBlankController.cs",
+              "ViewState": "AQIAADoAAAAAAAAAAAAgwE0AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T16:43:01.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ApiTests.cs",
               "DocumentMoniker": "Z:\\Tests\\ApiTests.cs",
               "RelativeDocumentMoniker": "..\\Tests\\ApiTests.cs",
               "ToolTip": "Z:\\Tests\\ApiTests.cs",
               "RelativeToolTip": "..\\Tests\\ApiTests.cs",
-              "ViewState": "AQIAAF4AAAAAAAAAAAAYwGUAAAAwAAAA",
+              "ViewState": "AQIAAF4AAAAAAAAAAAAcwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T13:46:13.841Z",
+              "WhenOpened": "2024-07-03T16:47:55.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminPanelTests.cs",
+              "DocumentMoniker": "Z:\\Tests\\AdminPanelTests.cs",
+              "RelativeDocumentMoniker": "..\\Tests\\AdminPanelTests.cs",
+              "ToolTip": "Z:\\Tests\\AdminPanelTests.cs",
+              "RelativeToolTip": "..\\Tests\\AdminPanelTests.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T16:41:06.039Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "Z:\\AdminPanel\\Program.cs",
+              "RelativeDocumentMoniker": "..\\AdminPanel\\Program.cs",
+              "ToolTip": "Z:\\AdminPanel\\Program.cs",
+              "RelativeToolTip": "..\\AdminPanel\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T15:57:51.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "Z:\\AdminPanel\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "..\\AdminPanel\\Controllers\\AuthController.cs",
+              "ToolTip": "Z:\\AdminPanel\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "..\\AdminPanel\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAqwA0AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T15:44:47.309Z"
             }
           ]
         }

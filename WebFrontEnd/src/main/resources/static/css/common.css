@@ -1,0 +1,112 @@
+#wrapper {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    overflow-y: auto;
+    height: calc(100vh - 72px);
+}
+
+#loading {
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.inline-block {
+    display: flex;
+    align-items: center;
+}
+
+.modal-body {
+    overflow: hidden;
+}
+
+.centered-cell {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    height: 100%;
+}
+
+.no-overflow {
+    overflow-x: hidden;
+}
+
+.sidebar {
+    height: calc(100vh - 72px);
+    background-color: #f8f9fa;
+}
+
+.sidebar .nav-link {
+    color: #333;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #e9ecef;
+}
+
+.product {
+    width: 100%;
+    height: 300px;
+    padding: 8px;
+    border: 1px solid #333;
+    border-radius: 6px;
+}
+
+.product > .image {
+    display: inline-block;
+    width: 400px;
+    height: fit-content;
+    overflow: clip;
+}
+
+.product > .image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product > .data {
+    display: inline-block;
+    padding: 16px;
+}
+
+tr > td > img {
+    display: block;
+    width: 90px;
+    height: 35px;
+    overflow: hidden;
+    object-fit: contain;
+}
+
+tr > .img-cell {
+    width: 120px;
+}
+
+#payment {
+    width: max-content;
+    margin-right: 2em;
+    margin-left: auto;
+    align-items: end;
+}
+
+#payment > p {
+    font-size: 24px;
+    color: #1a1d20;
+    font-weight: bold;
+    margin: 0;
+}
+
+#payment > p > span {
+    font-size: 24px;
+    color: #2b2f32;
+    font-weight: bold;
+}
+
+#payment > button {
+    margin: 16px 0 0;
+    width: fit-content;
+}

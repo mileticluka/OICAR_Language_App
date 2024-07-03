@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+    <th:block th:replace="~{fragments/head.html}"/>
+
+    <style>
+        #stats {
+            margin-top: 28px;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>User Information</h3>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group row">
+                            <label for="username" class="col-sm-3 col-form-label">Username</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="username" th:value="*{username}" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-3 col-form-label">Email</label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" id="email" th:value="*{email}" readonly>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="text-center">
+                        <form action="/logout" method="post">
+                            <input type="submit" class="btn btn-warning mt-3" value="Logout"/>
+                        </form>
+                    </div>
+
+                    <div class="container table-container" id="stats">
+                        <h2 class="text-center mb-4">Statistics Overview</h2>
+
+                        <th:block th:each="lang : *{languages}">
+                            <h4 class="text-center mb-2" th:text="${lang.name}"></h4>
+
+                            <table class="table table-striped table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Statistic</th>
+                                    <th scope="col">Score</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <th:block th:each="stat : ${stats.get(lang.getId())}">
+                                    <tr>
+                                        <td th:text="${stat.getPrettyName()}"></td>
+                                        <td class="text-success" th:text="${stat.score}"></td>
+                                    </tr>
+                                </th:block>
+
+                                </tbody>
+                            </table>
+                        </th:block>
+
+
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button type="button" class="btn btn-danger mt-5" data-toggle="modal" data-target="#warningModal">Delete Account</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="warningModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header text-dark">
+                <h5 class="modal-title" id="exampleModalLabel">Warning</h5>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete your account? This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+
+                <form action="/delete" method="post">
+                    <input type="submit" class="btn btn-danger" value="Pemanently delete my account"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

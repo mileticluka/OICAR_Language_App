@@ -36,12 +36,12 @@ namespace API.Controllers
             return Ok(mapper.Map<UserDTO>(user));
         }
 
-        [HttpGet]
+        [HttpDelete("delete")]
         public ActionResult DeleteUser()
         {
             string? userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             User? user = userRepository.GetUser(int.Parse(userId));
-
+            
             userRepository.DeleteUser(int.Parse(userId));
 
             return Ok();

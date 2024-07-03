@@ -2,6 +2,7 @@
 using DAL.Interfaces;
 using DAL.Models;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,6 +54,34 @@ namespace DAL.Repository
                     numBytesRequested: 256 / 8);
 
             return hash;
+        }
+
+        public void CreateUser(string username, string password)
+        {
+            string hash;
+            string salt;
+            ComputeHashAndSalt(password, out salt, out hash);
+
+            
+            ctx.AdminUser.Add(new AdminUser()
+            {
+                 Username = username,
+                 PasswordHash = hash,
+                 PasswordSalt = salt
+            });
+            ctx.SaveChanges();
+        }
+
+        private void ComputeHashAndSalt(string password, out string salt, out string hash)
+        {
+            byte[] bytesSalt = RandomNumberGenerator.GetBytes(128 / 8); // divide by 8 to convert bits to bytes
+            string b64Salt = Convert.ToBase64String(bytesSalt);
+
+            byte[] bytesHash = GetHash(password, bytesSalt);
+            string b64Hash = Convert.ToBase64String(bytesHash);
+
+            salt = b64Salt;
+            hash = b64Hash;
         }
 
     }

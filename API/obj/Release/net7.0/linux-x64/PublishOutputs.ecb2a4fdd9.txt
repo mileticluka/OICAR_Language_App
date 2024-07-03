@@ -1,0 +1,5 @@
+Z:\API\obj\Release\net7.0\linux-x64\PubTmp\Out\appsettings.Development.json
+Z:\API\obj\Release\net7.0\linux-x64\PubTmp\Out\appsettings.json
+Z:\API\obj\Release\net7.0\linux-x64\PubTmp\Out\API.pdb
+Z:\API\obj\Release\net7.0\linux-x64\PubTmp\Out\DAL.pdb
+Z:\API\obj\Release\net7.0\linux-x64\PubTmp\Out\API
